@@ -1,4 +1,4 @@
-SELECT students.name as student, avg(assignment_submissions.duration) as average_assignment_duration, avg(assignments.duration) as average_estimated_duration
+SELECT students.name as student, CAST(avg(assignment_submissions.duration) AS DECIMAL(10,2)) as average_assignment_duration, CAST(avg(assignments.duration) as DECIMAL(10,2)) as average_estimated_duration
 FROM students 
 JOIN assignment_submissions ON students.id = student_id 
 JOIN assignments
